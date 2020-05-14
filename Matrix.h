@@ -3,7 +3,7 @@
 using namespace std; 
 class Matrix 
 { 
-//qani vor "cout<<a" operatori dzakh operatory coutn e(kam ciny) => sa chenq karogh
+//qani vor "cout<<a" operatori dzakh op-y cout-n e(kam ciny) => sa chenq karogh
 //gerbernel vorpes member function(vorpes klassi andam f-a), bayc vorpeszi ays klassi mijiny
 //karoghananq cout(kam cin) anel petq e hasaneli+ unenanq => ays op-y friend f-a e
 friend std::ostream& operator<<(std::ostream&, const Matrix&);//cout-y ostream` output stream(elqayin hosq) tipi e,
