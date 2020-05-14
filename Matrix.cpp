@@ -15,8 +15,8 @@ std::ostream& operator<<(std::ostream& o, const Matrix& M)
 std::istream& operator>>(std::istream& k, Matrix& M)
 {
     for(int i = 0; i < M.m_rows; ++i)
-    for(int j = 0; j < M.m_columns; ++j)
-      k>>M.m_matrix[i][j];
+        for(int j = 0; j < M.m_columns; ++j)
+            k>>M.m_matrix[i][j];
       
       return k;
 }
@@ -41,8 +41,8 @@ Matrix::Matrix(int m, int n)
 { 
 allocate(); 
 for(int i = 0; i < n; ++i) 
-for(int j = 0; j < m; ++j) 
-m_matrix[i][j] = 0; 
+    for(int j = 0; j < m; ++j) 
+        m_matrix[i][j] = 0; 
 } 
 
 Matrix::Matrix(int n, int m, const int** matrix) 
@@ -51,8 +51,8 @@ Matrix::Matrix(int n, int m, const int** matrix)
 { 
 allocate(); 
 for(int i = 0; i < n; ++i) 
-for(int j = 0; j < m; ++j) 
-m_matrix[i][j] = matrix[i][j]; 
+    for(int j = 0; j < m; ++j) 
+        m_matrix[i][j] = matrix[i][j]; 
 } 
 
 Matrix::Matrix(const Matrix& m) 
@@ -61,8 +61,8 @@ Matrix::Matrix(const Matrix& m)
 { 
 allocate(); 
 for(int i = 0; i < m_rows; ++i) 
-for(int j = 0; j < m_columns; ++j) 
-m_matrix[i][j] = m.m_matrix[i][j]; 
+    for(int j = 0; j < m_columns; ++j) 
+        m_matrix[i][j] = m.m_matrix[i][j]; 
 } 
 
 Matrix:: ~Matrix() 
@@ -94,7 +94,7 @@ void Matrix:: remove_row(int i)
 int ** A1 = new int * [m_rows-1]; 
 for(int j = 0; j < i; ++j) 
 { 
-A1[j] = m_matrix[j]; 
+    A1[j] = m_matrix[j]; 
 } 
 delete []m_matrix; 
 m_matrix = A1; 
@@ -111,11 +111,11 @@ int max = 0;
 max = m_matrix[0][0]; 
 
 for (int i = 0; i < m_rows; ++i) 
-for (int j = 0; j < m_columns; ++j) 
-if(m_matrix[i][j] > max) 
-{ 
-max = m_matrix[i][j]; 
-} 
+    for (int j = 0; j < m_columns; ++j) 
+        if(m_matrix[i][j] > max) 
+        { 
+            max = m_matrix[i][j]; 
+        } 
 return max; 
 } 
 
@@ -123,8 +123,8 @@ void Matrix:: print() const
 { 
 for (int i = 0; i < m_rows; ++i) 
 { 
-for (int j = 0; j < m_columns; ++j) 
-cout << m_matrix[i][j] << ' '; 
+    for (int j = 0; j < m_columns; ++j) 
+    cout << m_matrix[i][j] << ' '; 
 cout << endl; 
 } 
 cout << endl; 
@@ -140,8 +140,8 @@ m_columns = M.m_columns;
 allocate(); 
 
 for(int i = 0; i < m_rows; ++i) 
-for(int j = 0; j < m_columns; ++j) 
-m_matrix[i][j] = M.m_matrix[i][j]; 
+    for(int j = 0; j < m_columns; ++j) 
+        m_matrix[i][j] = M.m_matrix[i][j]; 
 } 
 return *this;// parunakutyuny, aysinqn amboghj matricy` el-erov, chapov ev ayln
 } 
@@ -169,11 +169,11 @@ Matrix& Matrix:: operator+=(const Matrix& M)//this-i het enq ashkhatelu,petq e t
 //M-i rows u columnsy petq e = linen mer m_mcol u m_row-in 
 if( m_rows == M.m_rows && m_columns == M.m_columns) 
 { 
-for(int i = 0; i < m_rows; ++i) 
-for(int j = 0; j < m_columns; ++j) 
-{ 
-m_matrix[i][j] +=M.m_matrix[i][j]; 
-} 
+    for(int i = 0; i < m_rows; ++i) 
+        for(int j = 0; j < m_columns; ++j) 
+        { 
+            m_matrix[i][j] +=M.m_matrix[i][j]; 
+        } 
 } 
 return *this; 
 } 
